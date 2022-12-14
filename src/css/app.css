@@ -1,5 +1,39 @@
 /* Import fonts */
-@import url('../fonts/Roboto.css');
-
+@import url("src/fonts/Roboto.css");
 /* Reset and normalize */
-@import url('./normalize.css');
+@import url("src/css/normalize.css");
+.logo {
+  color: #fff;
+  text-shadow: -1px -1px 0 #e6954e, 1px 1px 0 #000;
+  font-weight: bold;
+  font-family: "Bodoni MT", serif;
+  font-size: 3em;
+}
+
+.menu nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+.menu nav a {
+  color: #e6954e;
+}
+
+button {
+  border: 1px solid #e6954e;
+  color: #e6954e;
+  background-color: #fff;
+}
+
+.menu nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+.menu nav a {
+  color: #e6954e;
+}
+
+/*# sourceMappingURL=app.css.map */

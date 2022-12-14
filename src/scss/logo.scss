@@ -1,0 +1,9 @@
+@import "constants";
+
+.logo {
+  color: #fff;
+  text-shadow: -1px -1px 0 $color_main, 1px 1px 0 #000;
+  font-weight: bold;
+  font-family: "Bodoni MT", serif;
+  font-size: 3em;
+}

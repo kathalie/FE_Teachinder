@@ -1,0 +1,18 @@
+@import "constants";
+
+@mixin rect-button {
+  border: 1px solid $color_main;
+  color: $color_main;
+  background-color: #fff;
+}
+
+.menu nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+
+  a {
+    color: $color_main;
+  }
+}

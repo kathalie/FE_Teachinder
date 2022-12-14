@@ -1,29 +1,286 @@
 <!DOCTYPE html>
 <html lang="ua">
 
-   <head itemscope itemtype="http://schema.org/WebSite">
+<head itemscope itemtype="http://schema.org/WebSite">
 
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="msapplication-tap-highlight" content="no">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Main Page</title>
+    <title>Teachinder</title>
 
-      <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
 
-   </head>
+</head>
 
-   <body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
 
-      <script type="text/javascript" src="../build/app.js"></script>
+<header class="main_header">
+    <div class="top_row">
+        <h1 class="logo">Teachinder</h1>
+        <form action="" class="search">
+            <label>
+                <input type="text" placeholder="Name, note or age to search">
+            </label>
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <button>Add teacher</button>
+    </div>
+</header>
 
-   <div>
-      <a href="./compact_card.html">Compact Card</a><br>
-      <a href="./form.html">Form</a><br>
-      <a href="./full_card.html">Full Card</a><br>
-      <a href="./table.html">Table</a>
-   </div>
 
-  </body>
+<main>
+    <section id="teachers">
+        <h2>Top teachers</h2>
+        <ul class="filters">
+            <li>
+                <label>
+                    Age:
+                    <select name="age" id="age">
+                        <option value="all">all</option>
+                        <option value="age_18-31">18-31</option>
+                        <option value="age_32-45">32-45</option>
+                        <option value="age_32-45">46-59</option>
+                        <option value="age_60-plus">60 and older</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <label>
+                    Region:
+                    <select name="region" id="region">
+                        <option value="eu">Europe</option>
+                        <option value="as">Asia</option>
+                        <option value="na">North America</option>
+                        <option value="sa">South America</option>
+                        <option value="af">Africa</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <label>
+                    Sex:
+                    <select name="sex" id="sex">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <label>
+                    Only with photo
+                    <input type="checkbox" name="with_photo">
+                </label>
+            </li>
+            <li>
+                <label>
+                    Only favorites
+                    <input type="checkbox" name="favorites">
+                </label>
+            </li>
+        </ul>
+
+        <div class="teachers">
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p class="subject">Chemistry</p>
+                <p class="country">Ukraine</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Pragg Rameshbabbu">
+                <h3>Pragg Rameshbabbu</h3>
+                <p class="subject">Chess</p>
+                <p class="country">India</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Floor Jansen">
+                <h3>Floor Jansen</h3>
+                <p class="Vocal">Chemistry</p>
+                <p class="Denmark">Ukraine</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="John Burke">
+                <h3>John Burke</h3>
+                <p class="subject">Computer Science</p>
+                <p class="country">Belgium</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Ari Tang">
+                <h3>Ari Tang</h3>
+                <p class="subject">Biology</p>
+                <p class="country">China</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Rachel Andrew">
+                <h3>Rachel Andrew</h3>
+                <p class="subject">Medicine</p>
+                <p class="country">UK</p>
+            </article>
+            <article class="teacher-card">
+                <img src="./images/teacher.jpg" alt="Anna Kovalenko">
+                <h3>Anna Kovalenko</h3>
+                <p class="subject">Music</p>
+                <p class="country">Ukraine</p>
+            </article>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="statistics">
+        <h2>Statistics</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Speciality</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Speciality</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>Nationality</td>
+            </tr>            <tr>
+            <td>Name</td>
+            <td>Speciality</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Nationality</td>
+        </tr>            <tr>
+            <td>Name</td>
+            <td>Speciality</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Nationality</td>
+        </tr>
+        </table>
+
+        <ul class="table_controls">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li>...</li>
+            <li><a href="#">last</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="favorites">
+        <h2>Favorites</h2>
+        <article class="teacher-card">
+            <img src="./images/teacher.jpg" alt="Floor Jansen">
+            <h3>Floor Jansen</h3>
+            <p class="Vocal">Chemistry</p>
+            <p class="Denmark">Ukraine</p>
+        </article>
+        <article class="teacher-card">
+            <img src="./images/teacher.jpg" alt="John Burke">
+            <h3>John Burke</h3>
+            <p class="subject">Computer Science</p>
+            <p class="country">Belgium</p>
+        </article>
+        <article class="teacher-card">
+            <img src="./images/teacher.jpg" alt="Ari Tang">
+            <h3>Ari Tang</h3>
+            <p class="subject">Biology</p>
+            <p class="country">China</p>
+        </article>
+        <article class="teacher-card">
+            <img src="./images/teacher.jpg" alt="Rachel Andrew">
+            <h3>Rachel Andrew</h3>
+            <p class="subject">Medicine</p>
+            <p class="country">UK</p>
+        </article>
+        <article class="teacher-card">
+            <img src="./images/teacher.jpg" alt="Anna Kovalenko">
+            <h3>Anna Kovalenko</h3>
+            <p class="subject">Music</p>
+            <p class="country">Ukraine</p>
+        </article>
+    </section>
+
+    <hr>
+</main>
+
+<footer id="about" class="main_footer">
+    <div class="info">
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+
+    <div class="menu">
+        <nav>
+            <a href="#teachers">Teachers</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#about">About</a>
+        </nav>
+        <button>Add teacher</button>
+    </div>
+</footer>
+
+<script type="text/javascript" src="../build/app.js"></script>
+
+</body>
 </html>
