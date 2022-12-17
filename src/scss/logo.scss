@@ -1,9 +1,15 @@
 @import "constants";
 
+$text_shadow: 1px;
+
 .logo {
   color: #fff;
-  text-shadow: -1px -1px 0 $color_main, 1px 1px 0 #000;
   font-weight: bold;
   font-family: "Bodoni MT", serif;
   font-size: 3em;
+  text-shadow: -$text_shadow -$text_shadow 0 $color_main, $text_shadow $text_shadow 0 #000;
+
+  &:hover {
+    text-shadow: -2*$text_shadow -2*$text_shadow 1px $color_main_hover, 2*$text_shadow 2*$text_shadow 1px #000;
+  }
 }

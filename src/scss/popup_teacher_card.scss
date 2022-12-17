@@ -1,0 +1,126 @@
+@import "popup";
+
+@mixin floating_left($margin_b_r, $size) {
+  float: left;
+  margin: 0 $margin_b_r $margin_b_r 0;
+  width: $size;
+  height: $size;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.popup_teacher_card {
+  .popup_main_window {
+    @include popup_window(50%);
+
+    header {
+      @include upper_bar();
+    }
+
+    .popup_content {
+      @include popup_content(0.75em);
+
+      .teacher_profile {
+        display: flex;
+        position: relative;
+
+        img {
+          @include floating_left(1.2em, 40%);
+        }
+
+        .teacher_info {
+          margin-left: 3%;
+
+          .star {
+            @include transparent_bg_button(3em, $color_star);
+
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+
+          .name {
+            margin-top: 2%;
+            font-weight: 300;
+            font-size: 2em;
+          }
+
+          .detailed_info {
+            @include align_flex(column, center);
+
+            * {
+              padding: 0;
+              margin: 0.5em 0;
+            }
+
+            .speciality {
+              font-weight: bold;
+              font-size: 1.2em;
+              margin-bottom: 1em;
+            }
+
+            .email {
+              color: $color_links;
+            }
+          }
+        }
+      }
+
+      .toggle_map {
+        text-decoration: underline dashed;
+        text-decoration-thickness: from-font;
+        color: $color_links;
+
+        summary {
+          list-style: none;
+          outline: unset;
+        }
+
+        iframe {
+          padding-top: 1em;
+          width: 100%;
+          height: 20%;
+
+          @media screen and (max-width: 540px) {
+            @include place_window(50vw, 30vh, absolute, calc((100vh - 30vh) - 10vh), 5vw);
+
+            box-shadow: 5px 5px 5px darken($color_dark_grey, 10%);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      width: 88%;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 70%;
+
+      .popup_content {
+        width: 100%;
+        font-size: 0.7em;
+
+        .teacher_profile {
+          @include align_flex(column, center, center, auto, center);
+
+          img {
+            display: block;
+            width: 70%;
+            margin-right: 0;
+          }
+
+          .teacher_info {
+            .detailed_info p {
+              margin: 0.1em;
+            }
+
+            width: 100%;
+            margin: 0;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

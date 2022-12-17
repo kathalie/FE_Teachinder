@@ -1,0 +1,58 @@
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: auto;
+  align-content: auto;
+  text-align: auto;
+  gap: 0;
+  list-style: none;
+  color: #888;
+}
+.filters label:hover {
+  color: #000;
+}
+.filters ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: auto;
+  align-items: auto;
+  align-content: auto;
+  text-align: center;
+  padding: 0;
+  list-style: none;
+}
+.filters ul li {
+  padding: 0.7em;
+  border-right: 1px dotted #888;
+}
+.filters .checkboxes li:last-of-type {
+  border: none;
+}
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+  .filters :where(.selects, .checkboxes) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: auto;
+    align-content: auto;
+    text-align: auto;
+    margin: 0 0 1em 0;
+  }
+  .filters :where(.selects, .checkboxes) li:last-of-type {
+    border: none;
+  }
+}
+
+/*# sourceMappingURL=filters.css.map */

@@ -1,0 +1,44 @@
+@import "common";
+
+@mixin no_last_vertical_bar {
+  li:last-of-type {
+    border: none;
+  }
+}
+
+.filters {
+  @include horizontal_list();
+
+  color: $color_grey;
+
+  label:hover {
+    color: #000;
+  }
+
+  ul {
+    @include align_flex(row, auto, auto, auto, center);
+
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0.7em;
+      border-right: 1px dotted $color_grey; // Vertical bar
+    }
+  }
+
+  .checkboxes {
+    @include no_last_vertical_bar();
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    :where(.selects, .checkboxes) {
+      @include align_flex(row, center);
+      @include no_last_vertical_bar();
+
+      margin: 0 0 1em 0;
+    }
+  }
+}

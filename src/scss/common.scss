@@ -1,0 +1,58 @@
+@import "constants";
+
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+@mixin normalize_a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin normalize_spaces {
+  margin: 0;
+  margin-inline: 0;
+  padding: 0;
+}
+
+@mixin align_flex($direction: row, $justify: auto, $items: auto, $content: auto, $text: auto) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $items;
+  align-content: $content;
+  text-align: $text;
+}
+
+@mixin horizontal_list($gap: 0, $justify: center) {
+  @include align_flex(row, $justify);
+
+  gap: $gap;
+  list-style: none;
+}
+
+@mixin grid($columns_large: auto, $columns_medium: auto, $columns_small: auto) {
+  display: grid;
+  grid-template-columns: repeat($columns_large, auto);
+  grid-template-rows: auto;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat($columns_medium, auto);
+  }
+
+  @media screen and (max-width: 540px) {
+    grid-template-columns: repeat($columns_small, auto);
+  }
+}
+
+@mixin transparent_bg_button($font-size, $color) {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: $color;
+  font-size: $font-size;
+}

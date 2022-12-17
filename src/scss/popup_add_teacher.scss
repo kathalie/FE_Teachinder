@@ -1,0 +1,90 @@
+@import "popup";
+
+.popup_add_teacher {
+  .popup_main_window {
+    @include popup_window(40%);
+
+    header {
+      @include upper_bar();
+    }
+
+    .popup_content {
+      @include popup_content(0.85em);
+
+      form {
+        color: $color_medium_grey;
+
+        .form_grid {
+          @include grid(2, 2, 1);
+
+          column-gap: 1em;
+          grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
+        }
+
+        $right_margin: 5em;
+
+        :where(label, .radio_buttons) {
+          margin-bottom: 0.8em;
+        }
+
+        label {
+          @include align_flex(column, center);
+
+          :where(input, textarea, select) {
+            margin-top: 0.2em;
+          }
+
+          :where(select, input) {
+            padding: 0.4em;
+          }
+
+          textarea {
+            padding: 1em;
+            margin-bottom: 1em;
+          }
+
+          &:has(input[type=radio]) {
+            flex-direction: row;
+            float: left;
+          }
+
+          &:has(input[type=color]) {
+            @include align_flex(row, left, center, center, center);
+
+            margin-right: 1em;
+
+            input[type=color] {
+              margin-left: $right_margin;
+            }
+          }
+        }
+
+        .radio_buttons {
+          @include align_flex(row, left, center, center, center);
+
+          float: left;
+
+          label {
+            margin: 0;
+          }
+
+          span {
+            float: left;
+            margin-right: $right_margin;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 540px) {
+      textarea {
+        height: 0.8em;
+      }
+    }
+  }
+}

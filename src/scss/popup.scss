@@ -1,0 +1,66 @@
+@import "constants";
+@import "common";
+
+@mixin blur_background() {
+  backdrop-filter: blur(2px) brightness(0.6);
+}
+
+@mixin place_window($width: 100vw, $height: 100vh, $position: absolute, $top: 0, $right: 0) {
+  @include align_flex(row, center, center);
+
+  position: $position;
+
+  @if $position == absolute {
+    top: $top;
+    right: $right;
+  }
+
+  width: $width;
+  height: $height;
+}
+
+@mixin upper_bar() {
+  @include align_flex(row, space-between, center);
+
+  padding: 0.7em;
+  width: 100%;
+  background-color: $color_dark_grey;
+  color: #fff;
+
+  h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.1em;
+  }
+
+  button {
+    @include transparent_bg_button(1.2em, inherit);
+
+    padding: 0;
+    font-weight: 900;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@mixin popup_window($width: 100%, $justify: center) {
+  @include align_flex(column, $justify);
+
+  width: $width;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px $color_dark_grey;
+}
+
+@mixin popup_content($font_size) {
+  @include align_flex(column);
+
+  padding: 3%;
+  font-size: $font_size;
+}
+
+.popup {
+  @include blur_background;
+  @include place_window;
+}

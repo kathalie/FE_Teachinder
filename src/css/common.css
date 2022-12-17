@@ -1,0 +1,9 @@
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+/*# sourceMappingURL=common.css.map */

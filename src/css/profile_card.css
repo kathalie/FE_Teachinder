@@ -1,0 +1,68 @@
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.profile_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  align-items: center;
+  align-content: auto;
+  text-align: center;
+  position: relative;
+  width: min-content;
+  padding: 0 1.4em 1em;
+  font-size: 0.8em;
+}
+.profile_card .profile_photo {
+  display: flex;
+  flex-direction: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: auto;
+  text-align: auto;
+  width: 110px;
+  height: 110px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid #f89174;
+  overflow: hidden;
+}
+.profile_card .profile_photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.profile_card .profile_photo img:hover {
+  transform: scale(1.1);
+}
+.profile_card .profile_photo p {
+  text-align: center;
+  color: #f89174;
+  font-size: 2.5em;
+}
+.profile_card .profile_photo:hover {
+  border-color: #f34413;
+}
+.profile_card .profile_photo:hover p {
+  color: #f34413;
+}
+.profile_card p {
+  padding: 0;
+  margin: 0;
+}
+.profile_card .subject {
+  color: #888;
+  font-size: 1.2em;
+}
+.profile_card h3 {
+  text-wrap: normal;
+  word-break: break-word;
+  text-align: center;
+}
+
+/*# sourceMappingURL=profile_card.css.map */

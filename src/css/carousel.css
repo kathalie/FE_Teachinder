@@ -1,0 +1,26 @@
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.carousel_arrow {
+  position: absolute;
+  font-weight: 900;
+  font-size: 5em;
+  top: 25%;
+  color: #888;
+}
+.carousel_arrow.left_arrow {
+  left: 0;
+}
+.carousel_arrow.right_arrow {
+  right: 0;
+}
+.carousel_arrow:hover {
+  color: #000;
+}
+
+/*# sourceMappingURL=carousel.css.map */

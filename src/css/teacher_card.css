@@ -1,0 +1,52 @@
+.popup.hidden {
+  display: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+.profile_card {
+  position: relative;
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.4em 1em;
+  font-size: 0.8em;
+}
+.profile_card .profile_photo {
+  width: 110px;
+  height: 110px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid #f89174;
+  overflow: hidden;
+}
+.profile_card .profile_photo:hover {
+  border-color: #c9340a;
+}
+.profile_card .profile_photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.profile_card .profile_photo img:hover {
+  transform: scale(1.1);
+}
+.profile_card p {
+  padding: 0;
+  margin: 0;
+}
+.profile_card .subject {
+  color: #888;
+  font-size: 1.2em;
+}
+.profile_card h3 {
+  text-wrap: normal;
+  word-break: break-word;
+  text-align: center;
+}
+
+/*# sourceMappingURL=teacher_card.css.map */

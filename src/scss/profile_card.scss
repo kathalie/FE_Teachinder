@@ -1,0 +1,67 @@
+@import "common";
+
+@mixin profile_photo {
+  @include align_flex(auto, center, center);
+
+  width: 110px;
+  height: 110px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: $photo_frame_width solid $color_main;
+  overflow: hidden;
+
+  // if user has a photo - show the PHOTO
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  // if user does not have a photo - show INITIALS
+  p {
+    text-align: center;
+    color: $color_main;
+    font-size: 2.5em;
+  }
+
+  &:hover {
+    border-color: $color_main_hover;
+
+    p {
+      color: $color_main_hover;
+    }
+  }
+}
+
+.profile_card {
+  @include align_flex(column, auto, center, auto, center);
+
+  position: relative;
+  width: min-content;
+  padding: 0 1.4em 1em;
+  font-size: 0.8em;
+
+  .profile_photo {
+    @include profile_photo;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .subject {
+    color: $color_grey;
+    font-size: 1.2em;
+  }
+
+  h3 {
+    text-wrap: normal;
+    word-break: break-word;
+    text-align: center;
+  }
+}

@@ -1,0 +1,115 @@
+@import "common";
+
+@import "filters";
+@import "profile_card";
+@import "table_statistics";
+@import "control_elements";
+@import "carousel";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  @include normalize_a;
+}
+
+html {
+  font-family: "Verdana", sans-serif;
+}
+
+body {
+  margin: 20px 10%;
+}
+
+hr {
+  $side_margin: 20%;
+
+  margin: 40px $side_margin 50px $side_margin;
+  background-color: $color_medium_grey;
+  width: 100% - 2 * $side_margin;
+  height: 1px;
+
+  &:first-of-type {
+    margin-top: 1.75em;
+  }
+
+  @media screen and (max-width: 768px) {
+    $side_margin: 5%;
+
+    margin-left: $side_margin;
+    margin-right: $side_margin;
+    width: 100% - 2 * $side_margin;
+  }
+}
+
+section > h2 {
+  text-align: center;
+  margin: 1em 0 2em 0;
+  font-weight: bold;
+
+  @media screen and (max-width: 540px) {
+    margin: 1em 0;
+  }
+}
+
+button {
+  @include main_button;
+}
+
+.upper_row {
+  @include align_flex(row, space-between, center);
+
+  input {
+    padding: 0.7em;
+  }
+
+  @media screen and (max-width: 768px) {
+    @include align_flex(column, left, flex-start);
+
+    .logo {
+      margin-bottom: 0;
+    }
+
+    .search {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.all_teachers {
+  @include grid(5, 3, 2);
+
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+
+  .profile_card > .star {
+    position: absolute;
+    top: -7%;
+    right: 7%;
+    color: $color_star;
+    font-size: 3.5em;
+  }
+}
+
+.favorites {
+  width: 100%;
+  height: min-content;
+  position: relative;
+
+  .favorites_cards {
+    width: 85%;
+    display: flex;
+    overflow-x: hidden;
+    margin: 0 auto;
+
+    .profile_card {
+      @include carousel_item();
+    }
+  }
+}
+
+.main_footer {
+  font-size: 0.8em;
+}

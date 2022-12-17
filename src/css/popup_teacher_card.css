@@ -1,0 +1,191 @@
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.popup {
+  backdrop-filter: blur(2px) brightness(0.6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: auto;
+  text-align: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.popup_teacher_card .popup_main_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: auto;
+  align-content: auto;
+  text-align: auto;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px #444;
+}
+.popup_teacher_card .popup_main_window header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: auto;
+  text-align: auto;
+  padding: 0.7em;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+}
+.popup_teacher_card .popup_main_window header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.popup_teacher_card .popup_main_window header button {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.2em;
+  padding: 0;
+  font-weight: 900;
+}
+.popup_teacher_card .popup_main_window header button:hover {
+  transform: scale(1.2);
+}
+.popup_teacher_card .popup_main_window .popup_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  align-items: auto;
+  align-content: auto;
+  text-align: auto;
+  padding: 3%;
+  font-size: 0.75em;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile {
+  display: flex;
+  position: relative;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile img {
+  float: left;
+  margin: 0 1.2em 1.2em 0;
+  width: 40%;
+  height: 40%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info {
+  margin-left: 3%;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .star {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: #efea5b;
+  font-size: 3em;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .name {
+  margin-top: 2%;
+  font-weight: 300;
+  font-size: 2em;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: auto;
+  align-content: auto;
+  text-align: auto;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info * {
+  padding: 0;
+  margin: 0.5em 0;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info .speciality {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info .email {
+  color: #00a0c0;
+}
+.popup_teacher_card .popup_main_window .popup_content .toggle_map {
+  text-decoration: underline dashed;
+  text-decoration-thickness: from-font;
+  color: #00a0c0;
+}
+.popup_teacher_card .popup_main_window .popup_content .toggle_map summary {
+  list-style: none;
+  outline: unset;
+}
+.popup_teacher_card .popup_main_window .popup_content .toggle_map iframe {
+  padding-top: 1em;
+  width: 100%;
+  height: 20%;
+}
+@media screen and (max-width: 540px) {
+  .popup_teacher_card .popup_main_window .popup_content .toggle_map iframe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: auto;
+    text-align: auto;
+    position: absolute;
+    top: 60vh;
+    right: 5vw;
+    width: 50vw;
+    height: 30vh;
+    box-shadow: 5px 5px 5px #2b2b2b;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popup_teacher_card .popup_main_window {
+    width: 88%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .popup_teacher_card .popup_main_window {
+    width: 70%;
+  }
+  .popup_teacher_card .popup_main_window .popup_content {
+    width: 100%;
+    font-size: 0.7em;
+  }
+  .popup_teacher_card .popup_main_window .popup_content .teacher_profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: auto;
+    text-align: center;
+  }
+  .popup_teacher_card .popup_main_window .popup_content .teacher_profile img {
+    display: block;
+    width: 70%;
+    margin-right: 0;
+  }
+  .popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+  .popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info p {
+    margin: 0.1em;
+  }
+}
+
+/*# sourceMappingURL=popup_teacher_card.css.map */
