@@ -57,7 +57,21 @@ J
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 =
 src/js/app.js,d\f\dfa7e20d89fdea717938db2bf088fdea8c2f0616
-J
-src/js/data_manager.js.map,8\9\89d2d4edf3ef5160c7b2679141ec16eb8a2e980e
 A
 .stylelintrc.json,b\8\b8af146c14f2398fd612ac906f0be41df9d89b72
+@
+src/js/random.js,e\e\ee25fe39a9d7d8f354f2c4f11cbf4e77159e0d03
+=
+tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
+K
+src/js/constants/schemas.js,d\a\da88bd8ac1996e69cc99f8aa912563248482b9f6
+D
+src/js/user/types.js,0\6\068e28282ce854a33fd6e5242ae48e44770e1c34
+W
+'src/ts/data_retreiver/data_retriever.ts,f\5\f5910eca7f073b8464ca41869ea18c4c73b05bc7
+@
+src/ts/random.ts,c\1\c13076b37aac8bc96872d5317a9222019ce2e2da
+K
+src/ts/constants/schemas.ts,3\f\3ffcbccd7baf578039af5585386d39d3a334a7e6
+Q
+!src/ts/data_retreiver/retrieve.ts,8\a\8aa5d664cb9a35cb843b78746b7dc46c4e7cccc9

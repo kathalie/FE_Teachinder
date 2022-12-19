@@ -25,10 +25,7 @@ export enum SortOrder {
 export function sorted<T>(array: T[], comparator: Comparator<T>, order: SortOrder = SortOrder.ascending) {
     const arrayCopy = [...array];
 
-    if (order === SortOrder.descending)
-        comparator = (el1, el2) => comparator(el2, el1);
-
-    arrayCopy.sort(comparator);
+    arrayCopy.sort(order === SortOrder.descending ? (el1, el2) => comparator(el2, el1) : comparator);
 
     return arrayCopy;
 }

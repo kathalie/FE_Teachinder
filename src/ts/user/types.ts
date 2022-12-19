@@ -40,5 +40,5 @@ export type User = {
     favorite?: boolean,
     course?: string,
     bg_color?: HexColor,
-    note?: string
+    note?: string,
 }

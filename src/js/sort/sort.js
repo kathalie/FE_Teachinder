@@ -15,9 +15,7 @@ export var SortOrder;
 })(SortOrder || (SortOrder = {}));
 export function sorted(array, comparator, order = SortOrder.ascending) {
     const arrayCopy = [...array];
-    if (order === SortOrder.descending)
-        comparator = (el1, el2) => comparator(el2, el1);
-    arrayCopy.sort(comparator);
+    arrayCopy.sort(order === SortOrder.descending ? (el1, el2) => comparator(el2, el1) : comparator);
     return arrayCopy;
 }
 //# sourceMappingURL=sort.js.map
