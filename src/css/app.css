@@ -118,9 +118,6 @@
   width: 100%;
   height: 100%;
 }
-.profile_card .profile_photo img:hover {
-  transform: scale(1.1);
-}
 .profile_card .profile_photo p {
   text-align: center;
   color: #f89174;
@@ -131,6 +128,10 @@
 }
 .profile_card .profile_photo:hover p {
   color: #f34413;
+  transform: scale(1.1);
+}
+.profile_card .profile_photo:hover img {
+  transform: scale(1.1);
 }
 .profile_card p {
   padding: 0;
