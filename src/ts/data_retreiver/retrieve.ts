@@ -28,5 +28,3 @@ function normalize(mainMock: object[], additionalMock: object[], additionalField
 
     return extendedUserMock as User[];
 }
-
-export {normalize};

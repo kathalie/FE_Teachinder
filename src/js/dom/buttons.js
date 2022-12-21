@@ -1,5 +1,5 @@
 import { toggleHidden } from "./common/common.js";
-import { search } from "./load_users.js";
+import { search } from "./init.js";
 import { showTeacherCardPopup } from "./popups/teacher_card_popup.js";
 import { showAddTeacherPopup } from "./popups/add_teacher_popup.js";
 export function initButtons() {

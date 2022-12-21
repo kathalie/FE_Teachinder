@@ -1,10 +1,11 @@
 import { getRBValue, placePopup, toggleHidden } from "../common/common.js";
 import { countries } from "../../constants/countries.js";
 import { courses } from "../../user/types.js";
-import { filter, users } from "../load_users.js";
+import { filter, users } from "../init.js";
 import { UserValidator } from "../../user/validator.js";
 import { fillGridWithTeachers } from "../teachers_grid.js";
-import { additionalRandomFields } from "../../constants/schemas.js";
+import { randomId } from "../../random.js";
+import { saveNewUser } from "../../data_retreiver/load_users.js";
 const addTeacherPopup = document.querySelector(".popup_add_teacher");
 export function showAddTeacherPopup() {
     placePopup(addTeacherPopup);
@@ -33,6 +34,7 @@ export function initSubmitNewTeacher() {
             alert("Some fields were incorrectly filled");
             return;
         }
+        saveNewUser(newUser);
         users.push(newUser);
         fillGridWithTeachers(filter.filtered());
         toggleHidden(addTeacherPopup);
@@ -61,7 +63,7 @@ function newValidUser() {
     const b_day = new Date(user.b_day);
     user.age = getAge(b_day);
     user.b_day = b_day.toISOString();
-    user.id = additionalRandomFields.id();
+    user.id = randomId(10);
     user.favorite = false;
     const isValid = new UserValidator(user).validate().isValid();
     // @ts-ignore

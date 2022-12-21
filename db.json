@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "full_name": "Kate Verkhohliad",
+      "country": "Ukraine",
+      "city": "Київ",
+      "email": "kateryna.verkhohliad@ukma.edu.ua",
+      "phone": "+380971656624",
+      "b_day": "2003-12-31T00:00:00.000Z",
+      "bg_color": "#c2fff5",
+      "note": ":)",
+      "course": "Mathematics",
+      "gender": "Female",
+      "age": 18,
+      "id": "5238212951",
+      "favorite": false
+    }
+  ]
+}

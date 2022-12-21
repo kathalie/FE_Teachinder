@@ -9,6 +9,8 @@ export var SortOrder;
 })(SortOrder || (SortOrder = {}));
 export class Sort {
     previousArray;
+    lastComparator;
+    lastOrder;
     constructor(previousArray) {
         this.previousArray = previousArray;
     }
@@ -16,7 +18,14 @@ export class Sort {
         const arrayCopy = [...array];
         arrayCopy.sort(order === SortOrder.descending ? (el1, el2) => comparator(el2, el1) : comparator);
         this.previousArray = arrayCopy;
+        this.lastComparator = comparator;
+        this.lastOrder = order;
         return arrayCopy;
+    }
+    sortedByLastComparator(array) {
+        if (!this.lastComparator || !this.lastOrder)
+            return array;
+        return this.sorted(array, this.lastComparator, this.lastOrder);
     }
     getLastSorted() {
         return this.previousArray;

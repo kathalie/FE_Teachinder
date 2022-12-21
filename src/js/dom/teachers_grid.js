@@ -1,4 +1,4 @@
-import { users } from "./load_users.js";
+import { users } from "./init.js";
 import { allTeachersGrid } from "./common/constants.js";
 import { addTeacherCardsListener, createTeacherSmallCard } from "./teacher_small_card.js";
 export function initTeachersGrid() {

@@ -1,6 +1,6 @@
 import {toggleHidden} from "./common/common.js";
 import {User} from "../user/types.js";
-import {search, users} from "./load_users.js";
+import {search, users} from "./init.js";
 import {showTeacherCardPopup} from "./popups/teacher_card_popup.js";
 import {showAddTeacherPopup} from "./popups/add_teacher_popup.js";
 import {UserValidator} from "../user/validator.js";

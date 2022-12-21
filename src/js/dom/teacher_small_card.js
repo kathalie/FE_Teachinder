@@ -1,4 +1,4 @@
-import { search } from "./load_users.js";
+import { search } from "./init.js";
 import { showTeacherCardPopup } from "./popups/teacher_card_popup.js";
 import { favoritesContainer, filledStar } from "./common/constants.js";
 export function createTeacherSmallCard(user, setStar) {

@@ -1,38 +1,51 @@
 import { randomBoolean, randomFromArray, randomHexColor, randomId } from "../random.js";
 import { courses } from "../user/types.js";
 import { randomNotes } from "./constants.js";
-export const userSchema = {
-    "gender": (json) => json.gender,
-    "title": (json) => json.name.title,
-    "full_name": (json) => `${json.name.first} ${json.name.last}`,
-    "city": (json) => json.location.city,
-    "state": (json) => json.location.state,
-    "country": (json) => json.location.country,
-    "postcode": (json) => json.location.postcode,
-    "coordinates": (json) => json.location.coordinates,
-    "timezone": (json) => json.location.timezone,
-    "email": (json) => json.email,
-    "b_day": (json) => json.dob.date,
-    "age": (json) => json.dob.age,
-    "phone": (json) => json.phone,
-    "picture_large": (json) => json.picture.large,
-    "picture_thumbnail": (json) => json.picture.thumbnail
+export const userSchema = function (invalidUser) {
+    const id = randomId(10);
+    const fav = randomBoolean();
+    const course = randomFromArray(courses);
+    const color = randomHexColor();
+    const note = randomFromArray(randomNotes);
+    return {
+        gender: invalidUser.gender,
+        title: invalidUser.name.title,
+        full_name: `${invalidUser.name.first} ${invalidUser.name.last}`,
+        city: invalidUser.location.city,
+        state: invalidUser.location.state,
+        country: invalidUser.location.country,
+        postcode: invalidUser.location.postcode,
+        coordinates: invalidUser.location.coordinates,
+        timezone: invalidUser.location.timezone,
+        email: invalidUser.email,
+        b_day: invalidUser.dob.date,
+        age: invalidUser.dob.age,
+        phone: invalidUser.phone,
+        picture_large: invalidUser.picture.large,
+        picture_thumbnail: invalidUser.picture.thumbnail,
+        id: id,
+        favorite: fav,
+        course: course,
+        bg_color: color,
+        note: note
+    };
 };
 // function normalizeData(user: User):  {
 //     return
 // }
-export const additionalSchema = {
-    "id": (json) => json.id,
-    "favorite": (json) => json.favorite,
-    "course": (json) => json.course,
-    "bg_color": (json) => json.bg_color,
-    "note": (json) => json.note
-};
-export const additionalRandomFields = {
-    "id": () => randomId(10),
-    "favorite": () => randomBoolean(),
-    "course": () => randomFromArray(courses),
-    "bg_color": () => randomHexColor(),
-    "note": () => randomFromArray(randomNotes)
-};
+// export const additionalSchema = {
+//     "id": (json: any) => json.id,
+//     "favorite": (json: any) => json.favorite,
+//     "course": (json: any) => json.course,
+//     "bg_color": (json: any) => json.bg_color,
+//     "note": (json: any) => json.note
+// }
+//
+// export const additionalRandomFields = {
+//     "id": () => randomId(10),
+//     "favorite": () => randomBoolean(),
+//     "course": () => randomFromArray(courses),
+//     "bg_color": () => randomHexColor(),
+//     "note": () => randomFromArray(randomNotes)
+// }
 //# sourceMappingURL=schemas.js.map

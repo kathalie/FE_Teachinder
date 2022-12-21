@@ -1,6 +1,6 @@
 import {Predicate, UserFilter} from "../queries/filter.js";
 import {Gender, User} from "../user/types.js";
-import {filter} from "./load_users.js";
+import {filter} from "./init.js";
 import {fillGridWithTeachers} from "./teachers_grid.js";
 
 export function initFilters() {

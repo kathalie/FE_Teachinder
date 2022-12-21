@@ -1,6 +1,6 @@
 import { addTeacherCardsListener, createTeacherSmallCard } from "./teacher_small_card.js";
 import { UserFilter } from "../queries/filter.js";
-import { users } from "./load_users.js";
+import { users } from "./init.js";
 import { favoritesContainer } from "./common/constants.js";
 export function initFavorites() {
     const favoriteTeachers = new UserFilter(users).addFilter(UserFilter.userFilters.favourites()).filtered();

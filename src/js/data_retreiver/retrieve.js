@@ -20,5 +20,4 @@ function normalize(mainMock, additionalMock, additionalFields, mainSchema, addit
     // console.log(extendedUserMock);
     return extendedUserMock;
 }
-export { normalize };
 //# sourceMappingURL=retrieve.js.map

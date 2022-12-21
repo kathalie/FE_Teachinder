@@ -1,7 +1,9 @@
 import {getLastPage} from "../queries/slicer.js";
 import {usersPerPage} from "./common/constants.js";
-import {sort, users} from "./load_users.js";
+import {filter, sort, users} from "./init.js";
 import {fillStatisticsTable} from "./statistics.js";
+import {additionalUsers, addMockUsers} from "../data_retreiver/load_users.js";
+import {fillGridWithTeachers} from "./teachers_grid.js";
 
 const pagination = document.querySelector(".statistics_pagination");
 
@@ -11,7 +13,7 @@ export function initPagination() {
 }
 
 function addPaginationEventListener() {
-    pagination.addEventListener("click", (event: Event) => {
+    pagination.addEventListener("click", async (event: Event) => {
         const a = (event.target as HTMLElement).closest("a");
 
         if (!a) return;
@@ -19,13 +21,25 @@ function addPaginationEventListener() {
 
         const currentPage: number = parseInt(a.innerHTML);
 
-        fillStatisticsTable(sort.getLastSorted(), currentPage);
+        // if (getLastPage(usersPerPage, users) - currentPage <= 2) {
+        //     addMockUsers(additionalUsers).then(() => {
+        //         fillPagination(currentPage);
+        //         fillGridWithTeachers(filter.filtered());
+        //         fillStatisticsTable(sort.sortedByLastComparator(users), currentPage);
+        //         //fillPagination(currentPage); // отут краще абсолютний карент пейдж, а не той, який в даний момент
+        //         // буде наступним
+        //     });
+        // }
+
         fillPagination(currentPage);
+        fillGridWithTeachers(filter.filtered());
+        fillStatisticsTable(sort.sortedByLastComparator(users), currentPage);
     });
 }
 
 export function fillPagination(currentPage: number) {
-    const lastPage = getLastPage(usersPerPage, users);
+    let lastPage = getLastPage(usersPerPage, users);
+
     pagination.innerHTML = "";
 
     const setOfAvailablePages = new Set<number>();

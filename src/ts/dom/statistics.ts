@@ -1,5 +1,5 @@
 import {User} from "../user/types.js";
-import {sort, users} from "./load_users.js";
+import {sort, users} from "./init.js";
 import {SortOrder, UserComparators} from "../queries/sort.js";
 import {getUsersForPage} from "../queries/slicer.js";
 import {usersPerPage} from "./common/constants.js";

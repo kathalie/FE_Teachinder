@@ -18,7 +18,7 @@
  * }
  */
 
-export class DataRetriever {
+class DataRetriever {
     constructor(public schema: object) {
     }
 

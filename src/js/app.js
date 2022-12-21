@@ -47,7 +47,7 @@
 import { initButtons } from "./dom/buttons.js";
 import { initTeachersGrid } from "./dom/teachers_grid.js";
 import { initFilters } from "./dom/filters.js";
-import { users } from "./dom/load_users.js";
+import { users } from "./dom/init.js";
 import { fillStatisticsTable, initSorting } from "./dom/statistics.js";
 import { initPagination } from "./dom/pagination.js";
 import { initFavorites } from "./dom/favorites.js";

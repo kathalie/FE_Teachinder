@@ -1,5 +1,5 @@
 import { UserFilter } from "../queries/filter.js";
-import { filter } from "./load_users.js";
+import { filter } from "./init.js";
 import { fillGridWithTeachers } from "./teachers_grid.js";
 export function initFilters() {
     getInputFor("age").addEventListener("change", (event) => {

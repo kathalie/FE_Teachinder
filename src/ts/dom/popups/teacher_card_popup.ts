@@ -7,7 +7,7 @@ import {
     toggleHidden
 } from "../common/common.js";
 import {emptyStar, favoritesContainer, filledStar} from "../common/constants.js";
-import {filter, search} from "../load_users.js";
+import {filter, search} from "../init.js";
 import {fillGridWithTeachers} from "../teachers_grid.js";
 import {createTeacherSmallCard, findTeacherCard} from "../teacher_small_card.js";
 

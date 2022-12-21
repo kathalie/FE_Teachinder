@@ -16,6 +16,9 @@ export enum SortOrder {
 }
 
 export class Sort<T> {
+    private lastComparator: Comparator<T>;
+    private lastOrder: SortOrder;
+
     constructor(private previousArray: T[]) {
     }
 
@@ -25,8 +28,17 @@ export class Sort<T> {
         arrayCopy.sort(order === SortOrder.descending ? (el1, el2) => comparator(el2, el1) : comparator);
 
         this.previousArray = arrayCopy;
+        this.lastComparator = comparator;
+        this.lastOrder = order;
 
         return arrayCopy;
+    }
+
+    public sortedByLastComparator(array: T[]) {
+        if (!this.lastComparator || !this.lastOrder)
+            return array;
+
+        return this.sorted(array, this.lastComparator, this.lastOrder);
     }
 
     public getLastSorted() {

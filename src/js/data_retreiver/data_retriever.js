@@ -17,7 +17,7 @@
  *     "picture_thumbnail": "https://randomuser.me/api/portraits/thumb/men/28.jpg"
  * }
  */
-export class DataRetriever {
+class DataRetriever {
     schema;
     constructor(schema) {
         this.schema = schema;
