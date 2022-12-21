@@ -4,10 +4,6 @@
   .popup_main_window {
     @include popup_window(40%);
 
-    header {
-      @include upper_bar();
-    }
-
     .popup_content {
       @include popup_content(0.85em);
 

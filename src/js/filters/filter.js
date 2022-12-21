@@ -1,3 +1,4 @@
+import { regions } from "../constants/countries.js";
 class Filter {
     arrayToFilter;
     predicates = [];
@@ -8,7 +9,7 @@ class Filter {
         this.predicates.push(predicate);
         return this;
     }
-    removeFilters(predicate) {
+    removeFilter(predicate) {
         const index = this.predicates.findIndex(p => p.name === predicate.name);
         if (index !== -1)
             this.predicates.splice(index, 1);
@@ -25,6 +26,9 @@ export class UserFilter extends Filter {
     static userFilters = {
         byAge: (min, max) => function ageFilter(user) {
             return user.age >= min && user.age <= max;
+        },
+        byRegion: (region) => function regionFilter(user) {
+            return regions[region].includes(user.country);
         },
         byCountry: (country) => function countryFilter(user) {
             return user.country.toLowerCase() == country.toLowerCase();

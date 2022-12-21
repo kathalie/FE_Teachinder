@@ -12,13 +12,42 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
+}
+.popup header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  text-align: left;
+  padding: 0.7em;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+}
+.popup header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.popup header button {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.2em;
+  padding: 0;
+  font-weight: 900;
+}
+.popup header button:hover {
+  transform: scale(1.2);
 }
 
 /*# sourceMappingURL=popup.css.map */

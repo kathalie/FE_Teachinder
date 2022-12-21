@@ -2,7 +2,6 @@
 /* Import fonts */
 @import url("../fonts/Roboto.css");
 /* Reset and normalize */
-@import url("src/css/normalize.css");
 .logo {
   color: #fff;
   font-weight: bold;
@@ -34,9 +33,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   gap: 0;
   list-style: none;
   color: #888;
@@ -69,9 +68,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: auto;
-    align-content: auto;
-    text-align: auto;
+    align-items: normal;
+    align-content: normal;
+    text-align: left;
     margin: 0 0 1em 0;
   }
   .filters :where(.selects, .checkboxes) li:last-of-type {
@@ -104,8 +103,8 @@
   flex-direction: auto;
   justify-content: center;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   width: 110px;
   height: 110px;
   aspect-ratio: 1;
@@ -117,34 +116,33 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-.profile_card .profile_photo p {
-  text-align: center;
+  line-height: 100px;
   color: #f89174;
   font-size: 2.5em;
 }
 .profile_card .profile_photo:hover {
   border-color: #f34413;
 }
-.profile_card .profile_photo:hover p {
+.profile_card .profile_photo:hover img {
   color: #f34413;
   transform: scale(1.1);
 }
-.profile_card .profile_photo:hover img {
-  transform: scale(1.1);
+.profile_card h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-wrap: normal;
+  word-break: break-word;
+  text-align: center;
 }
 .profile_card p {
   padding: 0;
-  margin: 0;
+}
+.profile_card > p, .profile_card h3 {
+  margin-top: 1em;
 }
 .profile_card .subject {
   color: #888;
   font-size: 1.2em;
-}
-.profile_card h3 {
-  text-wrap: normal;
-  word-break: break-word;
-  text-align: center;
 }
 
 .popup.hidden {
@@ -183,16 +181,16 @@ table.statistics th:hover {
 }
 table.statistics th:hover::after {
   position: absolute;
-  content: "↓";
   color: #00a0c0;
   font-size: 1em;
   right: 0.5em;
   bottom: 0.5em;
 }
-table.statistics th:hover::before {
-  content: "";
-  width: 100%;
-  background-color: #000;
+table.statistics .ascending:hover::after {
+  content: "↓";
+}
+table.statistics .descending:hover::after {
+  content: "↑";
 }
 table.statistics :where(td, th):first-of-type {
   text-align: left;
@@ -211,17 +209,17 @@ table.statistics :where(td, th):first-of-type {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   gap: 2;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 1em 0;
 }
 .statistics_pagination li {
@@ -232,10 +230,11 @@ table.statistics :where(td, th):first-of-type {
   color: inherit;
   color: #00a0c0;
 }
-.statistics_pagination li a:visited {
-  color: #004b5a;
-}
 .statistics_pagination li a:hover {
+  color: #000;
+}
+.statistics_pagination li .current {
+  text-decoration: underline;
   color: #000;
 }
 
@@ -252,8 +251,8 @@ table.statistics :where(td, th):first-of-type {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 1.2em 0;
 }
 .menu button {
@@ -269,9 +268,9 @@ table.statistics :where(td, th):first-of-type {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   gap: 1em;
   list-style: none;
 }
@@ -287,8 +286,8 @@ table.statistics :where(td, th):first-of-type {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: auto;
-    text-align: auto;
+    align-content: normal;
+    text-align: left;
   }
   .menu nav > ul {
     justify-content: space-evenly;
@@ -313,6 +312,7 @@ table.statistics :where(td, th):first-of-type {
   font-size: 5em;
   top: 25%;
   color: #888;
+  cursor: pointer;
 }
 .carousel_arrow.left_arrow {
   left: 0;
@@ -340,6 +340,9 @@ html {
 body {
   margin: 20px 10%;
 }
+body:has(.popup:not(.hidden)) {
+  overflow: hidden;
+}
 
 hr {
   margin: 40px 20% 50px 20%;
@@ -361,7 +364,7 @@ hr:first-of-type {
 section > h2 {
   text-align: center;
   margin: 1em 0 2em 0;
-  font-weight: bold;
+  font-size: 2em;
 }
 @media screen and (max-width: 540px) {
   section > h2 {
@@ -385,8 +388,8 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
 }
 .upper_row input {
   padding: 0.7em;
@@ -397,8 +400,8 @@ button:hover {
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-    align-content: auto;
-    text-align: auto;
+    align-content: normal;
+    text-align: left;
   }
   .upper_row .logo {
     margin-bottom: 0;
@@ -414,6 +417,7 @@ button:hover {
   grid-template-rows: auto;
   justify-content: center;
   align-content: center;
+  margin: 1.5em;
   gap: 4px;
 }
 @media screen and (max-width: 768px) {
@@ -466,6 +470,10 @@ button:hover {
 
 .main_footer {
   font-size: 0.8em;
+  text-align: left;
+}
+.main_footer .info > p {
+  margin: 0.9em;
 }
 
 .popup.hidden {
@@ -482,67 +490,32 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
 }
-
-.popup.hidden {
-  display: none;
-}
-
-:where(h1, h2) {
-  margin: 0;
-}
-
-.popup {
-  backdrop-filter: blur(2px) brightness(0.6);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: auto;
-  text-align: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.popup_teacher_card .popup_main_window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
-  width: 50%;
-  background-color: #fff;
-  box-shadow: 0 3px 10px 2px #444;
-}
-.popup_teacher_card .popup_main_window header {
+.popup header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 0.7em;
   width: 100%;
   background-color: #444;
   color: #fff;
 }
-.popup_teacher_card .popup_main_window header h2 {
+.popup header h2 {
   margin: 0;
   font-weight: normal;
   font-size: 1.1em;
 }
-.popup_teacher_card .popup_main_window header button {
+.popup header button {
   border: unset;
   outline: unset;
   background-color: transparent;
@@ -551,16 +524,80 @@ button:hover {
   padding: 0;
   font-weight: 900;
 }
-.popup_teacher_card .popup_main_window header button:hover {
+.popup header button:hover {
   transform: scale(1.2);
+}
+
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.popup {
+  backdrop-filter: blur(2px) brightness(0.6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: normal;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.popup header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  text-align: left;
+  padding: 0.7em;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+}
+.popup header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.popup header button {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.2em;
+  padding: 0;
+  font-weight: 900;
+}
+.popup header button:hover {
+  transform: scale(1.2);
+}
+
+.popup_teacher_card .popup_main_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px #444;
 }
 .popup_teacher_card .popup_main_window .popup_content {
   display: flex;
   flex-direction: column;
-  justify-content: auto;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   padding: 3%;
   font-size: 0.75em;
 }
@@ -599,9 +636,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
 }
 .popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info * {
   padding: 0;
@@ -635,8 +672,8 @@ button:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    align-content: auto;
-    text-align: auto;
+    align-content: normal;
+    text-align: left;
     position: absolute;
     top: 60vh;
     right: 5vw;
@@ -695,44 +732,32 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
 }
-
-.popup_add_teacher .popup_main_window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
-  width: 40%;
-  background-color: #fff;
-  box-shadow: 0 3px 10px 2px #444;
-}
-.popup_add_teacher .popup_main_window header {
+.popup header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 0.7em;
   width: 100%;
   background-color: #444;
   color: #fff;
 }
-.popup_add_teacher .popup_main_window header h2 {
+.popup header h2 {
   margin: 0;
   font-weight: normal;
   font-size: 1.1em;
 }
-.popup_add_teacher .popup_main_window header button {
+.popup header button {
   border: unset;
   outline: unset;
   background-color: transparent;
@@ -741,16 +766,28 @@ button:hover {
   padding: 0;
   font-weight: 900;
 }
-.popup_add_teacher .popup_main_window header button:hover {
+.popup header button:hover {
   transform: scale(1.2);
+}
+
+.popup_add_teacher .popup_main_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
+  width: 40%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px #444;
 }
 .popup_add_teacher .popup_main_window .popup_content {
   display: flex;
   flex-direction: column;
-  justify-content: auto;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   padding: 3%;
   font-size: 0.85em;
 }
@@ -781,9 +818,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
 }
 .popup_add_teacher .popup_main_window .popup_content form label :where(input, textarea, select) {
   margin-top: 0.2em;
@@ -836,6 +873,87 @@ button:hover {
 @media screen and (max-width: 540px) {
   .popup_add_teacher .popup_main_window textarea {
     height: 0.8em;
+  }
+}
+
+.popup.hidden {
+  display: none;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.popup {
+  backdrop-filter: blur(2px) brightness(0.6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: normal;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.popup header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  text-align: left;
+  padding: 0.7em;
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+}
+.popup header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.popup header button {
+  border: unset;
+  outline: unset;
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.2em;
+  padding: 0;
+  font-weight: 900;
+}
+.popup header button:hover {
+  transform: scale(1.2);
+}
+
+.popup_nothing_was_found .popup_main_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px #444;
+}
+.popup_nothing_was_found .popup_main_window .popup_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
+  padding: 3%;
+  font-size: 1.1em;
+  align-items: center;
+  padding: 2em;
+}
+@media screen and (max-width: 768px) {
+  .popup_nothing_was_found .popup_main_window {
+    width: 88%;
   }
 }
 

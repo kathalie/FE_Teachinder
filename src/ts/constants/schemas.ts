@@ -1,5 +1,6 @@
-import {randomBoolean, randomFromArray, randomHexColor, randomId, randomLine} from "../random.js";
-import { courses } from "../user/types.js";
+import {randomBoolean, randomFromArray, randomHexColor, randomId} from "../random.js";
+import {courses, User} from "../user/types.js";
+import {randomNotes} from "./constants.js";
 
 export const userSchema = {
     "gender": (json: any) => json.gender,
@@ -19,6 +20,10 @@ export const userSchema = {
     "picture_thumbnail": (json: any) => json.picture.thumbnail
 }
 
+// function normalizeData(user: User):  {
+//     return
+// }
+
 export const additionalSchema = {
     "id": (json: any) => json.id,
     "favorite": (json: any) => json.favorite,
@@ -32,5 +37,5 @@ export const additionalRandomFields = {
     "favorite": () => randomBoolean(),
     "course": () => randomFromArray(courses),
     "bg_color": () => randomHexColor(),
-    "note": () => randomLine("../mock_files/mock_comments.txt")
+    "note": () => randomFromArray(randomNotes)
 }

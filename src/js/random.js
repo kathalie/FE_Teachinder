@@ -26,12 +26,12 @@ function randomFromArray(arr) {
     const index = randomInt(arr.length);
     return arr[index];
 }
-function randomLine(fileName) {
-    return "sample";
-    // const lines: string[] = fs.readFileSync(fileName, 'utf-8').split("\n");
-    // const index = randomInt(lines.length);
-    //
-    // return lines[index];
-}
-export { randomInt, randomId, randomBoolean, randomFromArray, randomHexColor, randomLine };
+// function randomLine(fileName: string): string {
+//     return "sample";
+//     // const lines: string[] = fs.readFileSync(fileName, 'utf-8').split("\n");
+//     // const index = randomInt(lines.length);
+//     //
+//     // return lines[index];
+// }
+export { randomInt, randomId, randomBoolean, randomFromArray, randomHexColor };
 //# sourceMappingURL=random.js.map

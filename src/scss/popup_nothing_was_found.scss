@@ -1,0 +1,18 @@
+@import "popup";
+
+.popup_nothing_was_found {
+  .popup_main_window {
+    @include popup_window(50%);
+
+    .popup_content {
+      @include popup_content(1.1em);
+
+      align-items: center;
+      padding: 2em;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 88%;
+    }
+  }
+}

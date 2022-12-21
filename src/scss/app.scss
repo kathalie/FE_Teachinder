@@ -2,10 +2,12 @@
 @import url('../fonts/Roboto.css');
 
 /* Reset and normalize */
-@import url('src/css/normalize.css');
+//@import url('./normalize.css');
 
 @import "logo";
 @import "main";
 @import "popup";
 @import "popup_teacher_card";
 @import "popup_add_teacher";
+@import "popup_nothing_was_found";
+

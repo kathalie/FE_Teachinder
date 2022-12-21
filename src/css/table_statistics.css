@@ -35,16 +35,16 @@ table.statistics th:hover {
 }
 table.statistics th:hover::after {
   position: absolute;
-  content: "↓";
   color: #00a0c0;
   font-size: 1em;
   right: 0.5em;
   bottom: 0.5em;
 }
-table.statistics th:hover::before {
-  content: "";
-  width: 100%;
-  background-color: #000;
+table.statistics .ascending:hover::after {
+  content: "↓";
+}
+table.statistics .descending:hover::after {
+  content: "↑";
 }
 table.statistics :where(td, th):first-of-type {
   text-align: left;
@@ -63,17 +63,17 @@ table.statistics :where(td, th):first-of-type {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   gap: 2;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 1em 0;
 }
 .statistics_pagination li {
@@ -84,10 +84,11 @@ table.statistics :where(td, th):first-of-type {
   color: inherit;
   color: #00a0c0;
 }
-.statistics_pagination li a:visited {
-  color: #004b5a;
-}
 .statistics_pagination li a:hover {
+  color: #000;
+}
+.statistics_pagination li .current {
+  text-decoration: underline;
   color: #000;
 }
 

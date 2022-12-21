@@ -12,44 +12,32 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
 }
-
-.popup_teacher_card .popup_main_window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
-  width: 50%;
-  background-color: #fff;
-  box-shadow: 0 3px 10px 2px #444;
-}
-.popup_teacher_card .popup_main_window header {
+.popup header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: auto;
-  text-align: auto;
+  align-content: normal;
+  text-align: left;
   padding: 0.7em;
   width: 100%;
   background-color: #444;
   color: #fff;
 }
-.popup_teacher_card .popup_main_window header h2 {
+.popup header h2 {
   margin: 0;
   font-weight: normal;
   font-size: 1.1em;
 }
-.popup_teacher_card .popup_main_window header button {
+.popup header button {
   border: unset;
   outline: unset;
   background-color: transparent;
@@ -58,16 +46,28 @@
   padding: 0;
   font-weight: 900;
 }
-.popup_teacher_card .popup_main_window header button:hover {
+.popup header button:hover {
   transform: scale(1.2);
+}
+
+.popup_teacher_card .popup_main_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 2px #444;
 }
 .popup_teacher_card .popup_main_window .popup_content {
   display: flex;
   flex-direction: column;
-  justify-content: auto;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
   padding: 3%;
   font-size: 0.75em;
 }
@@ -106,9 +106,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: auto;
-  align-content: auto;
-  text-align: auto;
+  align-items: normal;
+  align-content: normal;
+  text-align: left;
 }
 .popup_teacher_card .popup_main_window .popup_content .teacher_profile .teacher_info .detailed_info * {
   padding: 0;
@@ -142,8 +142,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    align-content: auto;
-    text-align: auto;
+    align-content: normal;
+    text-align: left;
     position: absolute;
     top: 60vh;
     right: 5vw;

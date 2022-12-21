@@ -12,6 +12,7 @@
   font-size: 5em;
   top: 25%;
   color: #888;
+  cursor: pointer;
 }
 .carousel_arrow.left_arrow {
   left: 0;

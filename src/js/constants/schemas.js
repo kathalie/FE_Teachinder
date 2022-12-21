@@ -1,5 +1,6 @@
-import { randomBoolean, randomFromArray, randomHexColor, randomId, randomLine } from "../random.js";
+import { randomBoolean, randomFromArray, randomHexColor, randomId } from "../random.js";
 import { courses } from "../user/types.js";
+import { randomNotes } from "./constants.js";
 export const userSchema = {
     "gender": (json) => json.gender,
     "title": (json) => json.name.title,
@@ -17,6 +18,9 @@ export const userSchema = {
     "picture_large": (json) => json.picture.large,
     "picture_thumbnail": (json) => json.picture.thumbnail
 };
+// function normalizeData(user: User):  {
+//     return
+// }
 export const additionalSchema = {
     "id": (json) => json.id,
     "favorite": (json) => json.favorite,
@@ -29,6 +33,6 @@ export const additionalRandomFields = {
     "favorite": () => randomBoolean(),
     "course": () => randomFromArray(courses),
     "bg_color": () => randomHexColor(),
-    "note": () => randomLine("../mock_files/mock_comments.txt")
+    "note": () => randomFromArray(randomNotes)
 };
 //# sourceMappingURL=schemas.js.map

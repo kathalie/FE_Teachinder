@@ -19,7 +19,7 @@
   padding: 0;
 }
 
-@mixin align_flex($direction: row, $justify: auto, $items: auto, $content: auto, $text: auto) {
+@mixin align_flex($direction: row, $justify: normal, $items: normal, $content: normal, $text: left) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;

@@ -32,18 +32,23 @@ table.statistics {
 
       &::after {
         position: absolute;
-        content: '↓';
         color: $color_links;
         font-size: 1em;
         right: 0.5em;
         bottom: 0.5em;
       }
+    }
+  }
 
-      &::before {
-        content: '';
-        width: 100%;
-        background-color: #000;
-      }
+  .ascending:hover {
+    &::after {
+      content: $arrow_up;
+    }
+  }
+
+  .descending:hover {
+    &::after {
+      content: $arrow_down;
     }
   }
 
@@ -70,15 +75,16 @@ table.statistics {
     a {
       @include normalize_a();
 
-      color: $color_links;
-
-      &:visited {
-        color: darken($color_links, 20%);
-      }
-
       &:hover {
         color: $color_controller_selected;
       }
+
+      color: $color_links;
+    }
+
+    .current {
+      text-decoration: underline;
+      color: $color_controller_selected;
     }
   }
 }

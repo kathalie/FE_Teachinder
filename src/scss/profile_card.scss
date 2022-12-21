@@ -10,16 +10,11 @@
   border: $photo_frame_width solid $color_main;
   overflow: hidden;
 
-  // if user has a photo - show the PHOTO
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-
-  // if user does not have a photo - show INITIALS
-  p {
-    text-align: center;
+    line-height: 100px;
     color: $color_main;
     font-size: 2.5em;
   }
@@ -27,12 +22,8 @@
   &:hover {
     border-color: $color_main_hover;
 
-    p {
-      color: $color_main_hover;
-      transform: scale(1.1);
-    }
-
     img {
+      color: $color_main_hover;
       transform: scale(1.1);
     }
   }
@@ -50,19 +41,24 @@
     @include profile_photo;
   }
 
+  h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-wrap: normal;
+    word-break: break-word;
+    text-align: center;
+  }
+
   p {
     padding: 0;
-    margin: 0;
+  }
+
+  > p, h3 {
+    margin-top: 1em;
   }
 
   .subject {
     color: $color_grey;
     font-size: 1.2em;
-  }
-
-  h3 {
-    text-wrap: normal;
-    word-break: break-word;
-    text-align: center;
   }
 }

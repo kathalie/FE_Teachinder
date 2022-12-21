@@ -10,6 +10,7 @@
 
     <title>Teachinder</title>
 
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/app.css">
 
 </head>
@@ -19,11 +20,11 @@
 <header class="main_header">
     <div class="upper_row">
         <h1 class="logo">Teachinder</h1>
-        <form action="/" class="search">
+        <form class="search">
             <label>
                 <input type="text" placeholder="Name, note or age to search">
             </label>
-            <button type="submit">Search</button>
+            <button type="submit" >Search</button>
         </form>
     </div>
     <div class="menu">
@@ -35,7 +36,7 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <button>Add teacher</button>
+        <button class="add_teacher">Add teacher</button>
     </div>
 </header>
 
@@ -50,19 +51,20 @@
                 <li>
                     <label>
                         Age:
-                        <select name="age" id="age">
+                        <select class="age" name="age" id="age">
                             <option value="all">all</option>
-                            <option value="age_18-29">18-29</option>
-                            <option value="age_30-39">30-39</option>
-                            <option value="age_40-54">40-54</option>
-                            <option value="age_55-plus">55 and older</option>
+                            <option value="18-29">18-29</option>
+                            <option value="30-39">30-39</option>
+                            <option value="40-54">40-54</option>
+                            <option value="55-100">55+</option>
                         </select>
                     </label>
                 </li>
                 <li>
                     <label>
                         Region:
-                        <select name="region" id="region">
+                        <select class="region" name="region" id="region">
+                            <option value="all">all</option>
                             <option value="eu">Europe</option>
                             <option value="as">Asia</option>
                             <option value="na">North America</option>
@@ -75,10 +77,10 @@
                 <li>
                     <label>
                         Sex:
-                        <select name="sex" id="sex">
+                        <select class="sex" name="sex" id="sex">
+                            <option value="all">all</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
-                            <option value="other">Other</option>
                         </select>
                     </label>
                 </li>
@@ -86,79 +88,20 @@
             <ul class="checkboxes">
                 <li>
                     <label>
-                        <input type="checkbox" name="with_photo">
+                        <input class="with_photo" type="checkbox" name="with_photo">
                         Only with photo
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" name="favorites">
+                        <input class="favourites" type="checkbox" name="favorites">
                         Only favorites
                     </label>
                 </li>
             </ul>
         </div>
 
-        <div class="all_teachers">
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="Ihor Tkachuk">
-                </div>
-                <h3>Ihor Tkachuk</h3>
-                <p class="subject">Chemistry</p>
-                <p class="country">Ukraine</p>
-                <span class="star">★</span>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <p>P.R.</p>
-<!--                    <img src="./images/teacher.jpg" alt="Pragg Rameshbabbu">-->
-                </div>
-                <h3>Pragg Rameshbabbu</h3>
-                <p class="subject">Chess</p>
-                <p class="country">India</p>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="Floor Jansen">
-                </div>
-                <h3>Floor Jansen</h3>
-                <p class="subject">Vocal</p>
-                <p class="country">Denmark</p>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="John Burke">
-                </div>
-                <h3>John Burke</h3>
-                <p class="subject">Computer Science</p>
-                <p class="country">Belgium</p>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="Ari Tang">
-                </div>
-                <h3>Ari Tang</h3>
-                <p class="subject">Biology</p>
-                <p class="country">China</p>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="Rachel Andrew">
-                </div>
-                <h3>Rachel Andrew</h3>
-                <p class="subject">Medicine</p>
-                <p class="country">UK</p>
-            </article>
-            <article class="profile_card">
-                <div class="profile_photo">
-                    <img src="./images/teacher.jpg" alt="Anna Kovalenko">
-                </div>
-                <h3>Anna Kovalenko</h3>
-                <p class="subject">Music</p>
-                <p class="country">Ukraine</p>
-            </article>
-        </div>
+        <div class="all_teachers"></div>
     </section>
 
     <hr>
@@ -166,85 +109,16 @@
     <section id="statistics">
         <h2>Statistics</h2>
         <table class="statistics">
-            <tr>
-                <th>Name</th>
-                <th>Speciality</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Nationality</th>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Speciality</td>
-                <td>Age</td>
-                <td>Gender</td>
-                <td>Nationality</td>
+            <tr class="sorting_row">
+                <th class="name ascending">Name</th>
+                <th class="course ascending">Speciality</th>
+                <th class="age ascending">Age</th>
+                <th class="gender ascending">Gender</th>
+                <th class="country ascending">Nationality</th>
             </tr>
         </table>
 
-        <ul class="statistics_pagination">
-            <li><a href="#statistics">1</a></li>
-            <li><a href="#statistics">2</a></li>
-            <li><a href="#statistics">3</a></li>
-            <li>...</li>
-            <li><a href="#statistics">Last</a></li>
-        </ul>
+        <ul class="statistics_pagination"></ul>
     </section>
 
     <hr>
@@ -256,48 +130,7 @@
             <span class="carousel_arrow left_arrow">⟨</span>
             <span class="carousel_arrow right_arrow">⟩</span>
 
-            <div class="favorites_cards">
-                <article class="profile_card">
-                    <div class="profile_photo">
-                        <img src="./images/teacher.jpg" alt="Floor Jansen">
-                    </div>
-                    <h3>Floor Jansen</h3>
-                    <p class="subject">Chemistry</p>
-                    <p class="country">Ukraine</p>
-                </article>
-                <article class="profile_card">
-                    <div class="profile_photo">
-                        <img src="./images/teacher.jpg" alt="John Burke">
-                    </div>
-                    <h3>John Burke</h3>
-                    <p class="subject">Computer Science</p>
-                    <p class="country">Belgium</p>
-                </article>
-                <article class="profile_card">
-                    <div class="profile_photo">
-                        <img src="./images/teacher.jpg" alt="Ari Tang">
-                    </div>
-                    <h3>Ari Tang</h3>
-                    <p class="subject">Biology</p>
-                    <p class="country">China</p>
-                </article>
-                <article class="profile_card">
-                    <div class="profile_photo">
-                        <img src="./images/teacher.jpg" alt="Rachel Andrew">
-                    </div>
-                    <h3>Rachel Andrew</h3>
-                    <p class="subject">Medicine</p>
-                    <p class="country">UK</p>
-                </article>
-                <article class="profile_card">
-                    <div class="profile_photo">
-                        <img src="./images/teacher.jpg" alt="Anna Kovalenko">
-                    </div>
-                    <h3>Anna Kovalenko</h3>
-                    <p class="subject">Music</p>
-                    <p class="country">Ukraine</p>
-                </article>
-            </div>
+            <div class="favorites_cards"></div>
 
         </div>
 
@@ -328,7 +161,7 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <button>Add teacher</button>
+        <button class="add_teacher">Add teacher</button>
     </div>
 </footer>
 
@@ -341,80 +174,73 @@
     <div class="popup_main_window">
         <header>
             <h2>Add teacher</h2>
-            <button>✕</button>
+            <button class="close">✕</button>
         </header>
 
         <div class="popup_content">
             <form action="" id="new_teacher_form" class="popup_content new_teacher_form">
                 <label>
                     Name
-                    <input type="text" name="name" placeholder="Enter name" required>
+                    <input class="name" type="text" name="name" placeholder="Enter name" required>
                 </label>
 
                 <label>
                     Speciality
-                    <select required>
-                        <option>Mathematics</option>
-                        <option>Chemistry</option>
-                        <option>Biology</option>
+                    <select class="course" required>
                     </select>
                 </label>
 
                 <div class="form_grid">
                     <label>
                         Country
-                        <select name="country">
-                            <option>Ukraine</option>
-                            <option>UK</option>
-                            <option>China</option>
+                        <select class="country" name="country" required>
                         </select>
                     </label>
 
                     <label>
                         City
-                        <input type="text" name="city" required>
+                        <input class="city" type="text" name="city" required>
                     </label>
 
                     <label>
                         Email
-                        <input type="email" name="email" required>
+                        <input class="email" type="email" name="email" required>
                     </label>
 
                     <label>
                         Phone
-                        <input type="tel" name="phone">
+                        <input class="phone" type="tel" name="phone">
                     </label>
 
                     <label>
                         Date of birth
-                        <input type="date" name="date_of_birth" required>
+                        <input class="bday" type="date" name="date_of_birth" required>
                     </label>
                 </div>
 
-                <div class="radio_buttons">
+                <div class="radio_buttons sex">
                     <span>Sex</span>
+                    <label>
+                        Female
+                        <input type="radio" name="sex" value="female" checked>
+                    </label>
                     <label>
                         Male
                         <input type="radio" name="sex" value="male">
-                    </label>
-
-                    <label>
-                        Female
-                        <input type="radio" name="sex" value="female">
                     </label>
                 </div>
 
                 <label>
                     Background color
-                    <input type="color" name="preferred_bg_color">
+                    <input class="bg_color" type="color" value="#ffffff">
                 </label>
 
                 <label>
                     Notes (optional)
-                    <textarea name="comment" rows="4"></textarea>
+                    <textarea class="comment" rows="4"></textarea>
                 </label>
 
-                <button type="submit">Add</button>
+                <button class="add" type="submit">Add</button>
             </form>
         </div>
     </div>
@@ -424,31 +250,28 @@
     <div class="popup_main_window">
         <header>
             <h2>Teacher Info</h2>
-            <button>✕</button>
+            <button class="close">✕</button>
         </header>
 
         <div class="popup_content">
             <div class="teacher_profile">
-                <img src="./images/teacher.jpg" alt="{Teacher name}'s profile photo">
+                <img src="" alt="">
                 <div class="teacher_info">
-                    <button class="star">☆</button>
-                    <h2 class="name">Name</h2>
+                    <button class="star"></button>
+                    <h2 class="name"></h2>
                     <div class="detailed_info">
-                        <p class="speciality">Speciality</p>
+                        <p class="speciality"></p>
                         <p class="age_sex_container">
-                            <span class="age">Age</span>, <span class="sex">Sex</span></p>
+                            <span class="age"></span>, <span class="sex"></span></p>
                         <p class="city_country_container">
-                            <span class="city">City</span>, <span class="sex">Country</span>
+                            <span class="city"></span>, <span class="country"></span>
                         </p>
-                        <p class="email"><a href="mailto:" class="email">email@gmail.com</a>
-                        <p class="tel"><a href="tel:" class="phone">+380999999999</a></p>
+                        <p class="email"><a href="mailto:" class="email"></a></p>
+                        <p class="tel"><a href="tel:" class="phone"></a></p>
                     </div>
                 </div>
             </div>
-            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci alias aliquam
-                consequuntur error esse harum incidunt ipsum itaque laborum modi molestiae natus, non numquam
-                pariatur quia quidem rerum sed sit tempora voluptas voluptates voluptatibus? Aut temporibus ut
-                velit. A asperiores consectetur dolor eligendi est fugit nam nisi quaerat similique?</p>
+            <p class="comment"></p>
 
             <details class="toggle_map">
                 <summary>Toggle map</summary>
@@ -464,9 +287,21 @@
     </div>
 </div>
 
+<div class="popup popup_nothing_was_found hidden" id="popup_nothing_was_found">
+    <div class="popup_main_window">
+        <header>
+            <h2>Teacher info</h2>
+            <button class="close">✕</button>
+        </header>
+
+        <div class="popup_content">
+            <p>The teacher was not found.</p>
+        </div>
+    </div>
+</div>
+
 
 <script type="module" src="./js/app.js"></script>
-<!--<script type="text/javascript" src="../build/app.js"></script>-->
 
 </body>
 </html>

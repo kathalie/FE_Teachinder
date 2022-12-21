@@ -63,4 +63,8 @@
 .popup {
   @include blur_background;
   @include place_window;
+
+  header {
+    @include upper_bar();
+  }
 }

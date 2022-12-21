@@ -31,18 +31,18 @@ function randomBoolean(): boolean {
     return randomInt(2) == 1;
 }
 
-function randomFromArray(arr: any[]): any {
+function randomFromArray<T>(arr: T[]): T {
     const index = randomInt(arr.length);
 
     return arr[index];
 }
 
-function randomLine(fileName: string): string {
-    return "sample";
-    // const lines: string[] = fs.readFileSync(fileName, 'utf-8').split("\n");
-    // const index = randomInt(lines.length);
-    //
-    // return lines[index];
-}
+// function randomLine(fileName: string): string {
+//     return "sample";
+//     // const lines: string[] = fs.readFileSync(fileName, 'utf-8').split("\n");
+//     // const index = randomInt(lines.length);
+//     //
+//     // return lines[index];
+// }
 
-export {randomInt, randomId, randomBoolean, randomFromArray, randomHexColor, randomLine};
+export {randomInt, randomId, randomBoolean, randomFromArray, randomHexColor};
