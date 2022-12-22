@@ -5,12 +5,18 @@ import { Sort } from "../queries/sort.js";
 import { getMockUsers, getSavedUsers } from "../data_retreiver/load_users.js";
 //const normalizedUsers: User[] = normalize(randomUserMock, additionalUsers, additionalRandomFields, userSchema,
 // additionalSchema, ["full_name"]);
-const initialUsers = 50;
-const normalizedUsers = await getMockUsers(initialUsers);
-const savedUsers = await getSavedUsers();
-export const users = savedUsers.concat(validatedUsers(normalizedUsers));
-console.log(users);
-export const search = new Search(users);
-export const filter = new UserFilter(users);
-export const sort = new Sort(users);
+export let users;
+export let search;
+export let filter;
+export let sort;
+export async function init() {
+    const initialUsers = 50;
+    const normalizedUsers = await getMockUsers(initialUsers);
+    const savedUsers = await getSavedUsers();
+    users = savedUsers.concat(validatedUsers(normalizedUsers));
+    console.log(users);
+    search = new Search(users);
+    filter = new UserFilter(users);
+    sort = new Sort(users);
+}
 //# sourceMappingURL=init.js.map

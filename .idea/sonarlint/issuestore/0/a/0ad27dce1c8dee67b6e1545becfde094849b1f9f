@@ -1,0 +1,6 @@
+
+]typescript:S6353"5Use concise quantifier syntax '?' instead of '{0,1}'.(êº±Ìøÿÿÿÿ8ñà¸¼Ó0
+ctypescript:S6353";Use concise character class syntax '\d' instead of '[0-9]'.(êº±Ìøÿÿÿÿ8ñà¸¼Ó0
+]typescript:S6397"5Replace this character class by the character itself.(êº±Ìøÿÿÿÿ8ñà¸¼Ó0
+]typescript:S6353"5Use concise quantifier syntax '?' instead of '{0,1}'.(êº±Ìøÿÿÿÿ8ñà¸¼Ó0
+gtypescript:S3358R"DExtract this nested ternary operation into an independent statement.(£Û¿8ñà¸¼Ó0

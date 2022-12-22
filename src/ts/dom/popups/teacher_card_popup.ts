@@ -1,3 +1,5 @@
+import * as L from "leaflet";
+
 import {User} from "../../user/types.js";
 import {
     fillAnchorElement,
@@ -46,10 +48,27 @@ function fillTeacherCardPopup(user: User | undefined, teacherCardPopup: HTMLElem
     fillAnchorElement(teacherCardPopup, ".email a", `mailto:${user.email}`, user.email);
     fillAnchorElement(teacherCardPopup, ".tel a", `tel:${user.phone}`, user.phone);
     fillImgElement(teacherCardPopup, "img", user.picture_large, `${user.full_name}'s profile photo`);
-    if (user.coordinates)
-        teacherCardPopup.querySelector("iframe").src =
-            `https://maps.google.com/maps?q=${user.coordinates.latitude},${user.coordinates.longitude}&hl=es&z=14&output=embed`;
+    if (user.coordinates) {
+        // teacherCardPopup.querySelector("iframe").src =
+        //     `https://maps.google.com/maps?q=${user.coordinates.latitude},${user.coordinates.longitude}&hl=es&z=14&output=embed`;
+
+        createMap(user);
+    }
+
     toggleButtonStar(starButton, user);
+}
+
+function createMap(user: User) {
+    const map = L.map("map");
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    L.marker([user.coordinates.latitude, user.coordinates.longitude]).addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
 }
 
 export function initFavButton() {

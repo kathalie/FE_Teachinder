@@ -13,8 +13,6 @@ L
 src/css/logo.css,1\9\199af5a64798307e3c97e6c02913708b78f2a09a
 E
 src/css/constants.css,0\e\0e36707c388e2e49ec37129320f8cd7e05631f75
-A
-webpack.config.js,d\5\d5595158cc48f9bf3e51b06f6e6805a8fd2d6262
 >
 src/robots.txt,2\f\2f626491816dccc471c024a3a1e478ce43e36603
 M
@@ -23,16 +21,12 @@ N
 src/css/popup_teacher_card.css,4\4\447e8b2d42831f6233a42d4c7bf456dd19f9824e
 N
 src/scss/control_elements.scss,9\b\9bf9c628668128005bca6b56ec705c1a6d91cac0
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 =
 src/js/app.js,d\f\dfa7e20d89fdea717938db2bf088fdea8c2f0616
 A
 .stylelintrc.json,b\8\b8af146c14f2398fd612ac906f0be41df9d89b72
 @
 src/js/random.js,e\e\ee25fe39a9d7d8f354f2c4f11cbf4e77159e0d03
-=
-tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
 K
 src/js/constants/schemas.js,d\a\da88bd8ac1996e69cc99f8aa912563248482b9f6
 D
@@ -63,10 +57,6 @@ P
 src/ts/random.ts,c\1\c13076b37aac8bc96872d5317a9222019ce2e2da
 M
 src/ts/constants/countries.ts,5\4\54114c1e15ddc69ec45a936040ff516c5a52bfac
-H
-src/ts/queries/search.ts,6\5\6554efec34269ed5a45cec7ea0e57218313922b5
-H
-src/ts/queries/slicer.ts,6\7\676f81639ac3efebdc5ec5cef6234553df7734a2
 G
 src/scss/constants.scss,1\a\1a075389b1fa2bfa8342119a160743f0135187d3
 N
@@ -81,3 +71,53 @@ K
 src/ts/dom/common/common.ts,f\7\f77cb5d1ad13700c1b57750284adc77bb5c3fc59
 P
  src/scss/popup_teacher_card.scss,6\f\6fc3b4193958f7646bb39c91f27f3da097a886e7
+E
+src/ts/dom/buttons.ts,a\8\a8cd1ec51e94d1626a0ec643c66145b6da9eab14
+G
+src/ts/dom/favorites.ts,1\4\145c279e42bc116c83f33ba7d2015a55d0270e80
+H
+src/ts/dom/statistics.ts,4\2\4220cb59c84edd999949d737da940770851a9898
+P
+ src/js/dom/teacher_small_card.js,f\9\f989342bf27fbe0e055e6ba42d7d538b082337f1
+J
+src/scss/profile_card.scss,a\2\a2a2fc00f2af80130b3d6b6931215c7e82aa3491
+B
+src/scss/main.scss,9\3\939259f8e8ba841f0277ba43fe934e714d29d4d3
+P
+ src/mock_files/FE4U-Lab3-mock.js,3\0\305fa9c9923f6a99775fdb3d828195a38dfd3d75
+Q
+!src/ts/data_retreiver/retrieve.ts,8\a\8aa5d664cb9a35cb843b78746b7dc46c4e7cccc9
+W
+'src/ts/data_retreiver/data_retriever.ts,f\5\f5910eca7f073b8464ca41869ea18c4c73b05bc7
+D
+src/ts/user/types.ts,1\7\17911e225899363f10d24ae85f7787701b655afb
+M
+src/ts/constants/constants.ts,d\1\d12a7e8b63bdd4cdec22d55bdeaa199534aaf5b5
+K
+src/ts/constants/schemas.ts,3\f\3ffcbccd7baf578039af5585386d39d3a334a7e6
+N
+src/ts/dom/common/constants.ts,7\0\70f1d30131b4592cae3eb1967f41baa71a3de68a
+H
+src/ts/dom/pagination.ts,8\1\811ac57e504e8045c8c76b06eff437a336aac430
+P
+ src/ts/dom/teacher_small_card.ts,a\4\a4f538ecf9d7d013883563187b8e370e7bcba327
+H
+src/js/filters/filter.js,9\c\9cbca618a39aaec897dc0818b29b69236aabe7eb
+@
+src/js/filter.js,a\6\a637658790adf37da3f46f5738e9e8840bbafbac
+8
+.babelrc,b\c\bcac7464521b8c19a2372c739f6dc9e9ab7dfc80
+E
+src/ts/dom/filters.ts,3\6\36dc6ab8098c7d8a666122a6eebbe6e8ad780fbb
+H
+src/ts/queries/slicer.ts,6\7\676f81639ac3efebdc5ec5cef6234553df7734a2
+H
+src/ts/user/validator.ts,0\a\0ad27dce1c8dee67b6e1545becfde094849b1f9f
+R
+"src/ts/data_retreiver/normalize.ts,d\f\df97ebb482214555dc0e8ed934d354ee17c2548d
+H
+src/ts/queries/filter.ts,f\7\f752f5c545c345bf0febce0104b8c80fa5d619e0
+H
+src/ts/queries/search.ts,6\5\6554efec34269ed5a45cec7ea0e57218313922b5
+F
+src/ts/queries/sort.ts,d\d\dd2b9f24d9d541b5ef8451f93a09b18d30181b13

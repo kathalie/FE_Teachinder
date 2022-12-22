@@ -6,7 +6,7 @@ const serverUrl = `http://localhost:3000/users`;
 export const additionalUsers = 10;
 export async function getMockUsers(n) {
     const apiUrl = `https://randomuser.me/api/?results=${n}`;
-    return await fetch(apiUrl, {
+    return fetch(apiUrl, {
         method: "GET",
     })
         .then(res => res.json())
@@ -18,7 +18,7 @@ export async function getMockUsers(n) {
     });
 }
 export async function getSavedUsers() {
-    return await fetch(serverUrl, {
+    return fetch(serverUrl, {
         method: "GET",
     })
         .then(res => res.json())

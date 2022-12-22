@@ -47,22 +47,24 @@
 import { initButtons } from "./dom/buttons.js";
 import { initTeachersGrid } from "./dom/teachers_grid.js";
 import { initFilters } from "./dom/filters.js";
-import { users } from "./dom/init.js";
+import { init, users } from "./dom/init.js";
 import { fillStatisticsTable, initSorting } from "./dom/statistics.js";
 import { initPagination } from "./dom/pagination.js";
 import { initFavorites } from "./dom/favorites.js";
 import { initAddTeacherPopup } from "./dom/popups/add_teacher_popup.js";
 import { initFavButton } from "./dom/popups/teacher_card_popup.js";
 function run() {
-    fillStatisticsTable(users, 1);
-    initTeachersGrid();
-    initFavorites();
-    initAddTeacherPopup();
-    initFavButton();
-    initButtons();
-    initFilters();
-    initSorting();
-    initPagination();
+    init().then(() => {
+        fillStatisticsTable(users, 1);
+        initTeachersGrid();
+        initFavorites();
+        initAddTeacherPopup();
+        initFavButton();
+        initButtons();
+        initFilters();
+        initSorting();
+        initPagination();
+    });
 }
 run();
 //# sourceMappingURL=app.js.map

@@ -11,7 +11,7 @@ export const additionalUsers: number = 10;
 export async function getMockUsers(n: number): Promise<User[]> {
     const apiUrl = `https://randomuser.me/api/?results=${n}`;
 
-    return await fetch(apiUrl, {
+    return fetch(apiUrl, {
         method: "GET",
     })
         .then(res => res.json())
@@ -25,7 +25,7 @@ export async function getMockUsers(n: number): Promise<User[]> {
 }
 
 export async function getSavedUsers(): Promise<User[]> {
-    return await fetch(serverUrl, {
+    return fetch(serverUrl, {
         method: "GET",
     })
         .then(res => res.json())
